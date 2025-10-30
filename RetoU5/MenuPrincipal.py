@@ -48,7 +48,7 @@ def menu ():
              
                         case _:
                             print()
-                            print("Por favor seleccionar una acción valida,")
+                            print("Por favor seleccionar una acción valida.")
 
             case 3:
                 print()
@@ -65,18 +65,18 @@ def menu ():
 
                         case 2:
                             print()
-                            
+                            estadistica()
              
                         case 3:
                             print()
-                            
+                            Grafica_Columna()
              
                         case 4:
                             break
              
                         case _:
                             print()
-                            print("Por favor seleccionar una acción valida,")
+                            print("Por favor seleccionar una acción valida.")
 
             case 4: #Opción para salir del programa.
                 print()
