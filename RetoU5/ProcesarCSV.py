@@ -17,7 +17,7 @@ def primerasfilas():
 
             #Leer el encabezado y las primeras 15 lineas
             print(encabezado)
-            for i, fila in (lector):   #Se inicia un bucle para recorrer el resto de las líneas del archivo.
+            for i, fila in enumerate(lector):   #Se inicia un bucle para recorrer el resto de las líneas del archivo.
                 if i <= 15:
                     print(fila)
                 else:

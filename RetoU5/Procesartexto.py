@@ -106,14 +106,15 @@ def Histograma ():
 
             #La grafica se crea con una lista entonces todo el contedo de las vocales lo meto en una sola lista.
             vocales = [A, E, I, O, U]
+            posiciones = [0 , 1, 2, 3, 4]
 
             #Ahora se tiene que hacer el grafico; esto lo copie, peque y adapte de la parte de histograma de Notion.
             #Crear el histograma.
-            plt.hist(vocales, bins=5, edgecolor='purple', rwidth=0.5)
+            plt.hist(posiciones, bins = 5, weights=vocales, edgecolor='purple', rwidth=0.8)
              #Busque como se le cambiaba el gruseo a las barras porque no quedaba en la mitad de la vocal y me molestaba.
 
             # Configurar las etiquetas del eje x cara que sean las vocales respectivamente.
-            plt.xticks(range(5), ['a', 'e', 'i', 'o', 'u'])
+            plt.xticks(posiciones, ['a', 'e', 'i', 'o', 'u'])
             
 
             # Agregar título y etiquetas
