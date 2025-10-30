@@ -16,13 +16,12 @@ def primerasfilas():
             encabezado =next(lector)
 
             #Leer el encabezado y las primeras 15 lineas
-            print(encabezado[0])
-            for i, fila in enumerate(lector):
-                if i < 15:
+            print(encabezado)
+            for i, fila in (lector):   #Se inicia un bucle para recorrer el resto de las líneas del archivo.
+                if i <= 15:
                     print(fila)
                 else:
                     break
-
 
     except FileNotFoundError:
         print("No se encontro el archivo.")
@@ -53,8 +52,10 @@ def estadistica():
             datos_columna = []
 
 #Apartir de acá pedi ayuda de la IA porque no entendia como hacer que leyera la columna y no la fila y en Notion no encontre ejemplo de eso asi que no tuve idea de como hacerlo.
-            for fila in lector: #Para que pase por tdas las filas del archivo.
+            for fila in lector: #Para que pase por todas las filas del archivo.
                 if columna < len(fila):
+                #Verifica si la columna deseada existe en esa fila.
+                
                     valor = fila[columna].strip() #Aca se selecciona de cada fila solo el elemento correspondiente a la columna que se seleccionó.
                 
                 #Para eliminar a los espacios y las comillas.

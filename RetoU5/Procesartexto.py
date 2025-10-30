@@ -126,3 +126,6 @@ def Histograma ():
 
     except FileNotFoundError:
         print("No se encontro el archivo.")
+        
+    except Exception:
+        print("Ocurrió un error.")
