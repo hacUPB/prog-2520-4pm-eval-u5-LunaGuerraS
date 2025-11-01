@@ -1,6 +1,5 @@
 import csv
 import math
-import statistics #Busque si habia comandos para poder sacar medidas de tendencia central y me salio que era con este, no con el de matematica.
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -51,7 +50,7 @@ def estadistica():
             #Hago una lista vacia para meter los datos de la columna que se escogió.
             datos_columna = []
 
-#Apartir de acá pedi ayuda de la IA porque no entendia como hacer que leyera la columna y no la fila y en Notion no encontre ejemplo de eso asi que no tuve idea de como hacerlo.
+
             for fila in lector: #Para que pase por todas las filas del archivo.
                 if columna < len(fila):
                 #Verifica si la columna deseada existe en esa fila.
@@ -71,16 +70,31 @@ def estadistica():
                 print("No se encontraron datos numéricos en la columna seleccionada.")
 
 
-#Ahora se hacen todos los analisis. Estos si los hice yo, Busque en google que comando se usaba para cada operación matematica.
+#Ahora se hacen todos los analisis.
             numero_datos = len(datos_columna)
             promedio = sum(datos_columna)/ numero_datos
-            mediana = statistics.median (datos_columna)
-            desviacion = statistics.pstdev(datos_columna)
             minimo = min(datos_columna)
             maximo = max(datos_columna)
 
+    #Se hace el bucle para sacar la desviación.
+            for i in range(len(datos_columna)):
+                total += (i-promedio)**2
+                
+            desviacion = total/numero_datos
+            resultado = math.sqrt(desviacion)
+
+    #Se hace un condicional para la mediana.
+            datos_ordenados = sorted(datos_columna)
+            #Se tiene que ordenar de menor a mayor y tienen que existir los casos de que la cantidad sea par o impar.
+            if numero_datos % 2 == 1:
+                mediana = datos_ordenados[numero_datos // 2]
+            else:
+                medio = numero_datos // 2
+                mediana = (datos_ordenados[medio - 1] + datos_ordenados[medio]) / 2
+
+
             print(f"El analisis de la comumna {columna} es:")
-            print(f"Numero de datos: {numero_datos} \n Promedio: {promedio} \n Mediana: {mediana} \n Desviación estandar: {desviacion} \n Minimo: {minimo} \n Maximo: {maximo}")
+            print(f"Numero de datos: {numero_datos} \n Promedio: {promedio} \n Mediana: {mediana} \n Desviación estandar: {resultado} \n Minimo: {minimo} \n Maximo: {maximo}")
 
 
     except FileNotFoundError:
@@ -114,7 +128,8 @@ def Grafica_Columna():
             #Usé la misma logica que el ejercicio anterior.
             for fila in lector: #Para que pase por tdas las filas del archivo.
                     if columna < len(fila):
-                        valor = fila[columna].strip() #Aca se selecciona de cada fila solo el elemento correspondiente a la columna que se seleccionó.
+                        valor = fila[columna].strip()
+                    #Aca se selecciona de cada fila solo el elemento correspondiente a la columna que se seleccionó.
                     #Para eliminar a los espacios y las comillas.
                         valor = valor.replace('"','').replace(' ', '')
 

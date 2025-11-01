@@ -39,3 +39,4 @@ Se uso con bastante frecuencia el `try-except` para asegurar que el codigo sigui
 - `FileNotFoundError`: Archivos no encontrados.
 - `ValueError`: Entradas inválidas.
 - Excepciones generales.
+
