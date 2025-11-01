@@ -40,3 +40,6 @@ Se uso con bastante frecuencia el `try-except` para asegurar que el codigo sigui
 - `ValueError`: Entradas inválidas.
 - Excepciones generales.
 
+### Link del video.
+Video donde se muestra el funcionamiento completo del código.
+

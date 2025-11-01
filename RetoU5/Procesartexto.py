@@ -21,15 +21,15 @@ def lectura():
             num_caracterestotal = len(contenido)
 
             #Aqui lo mismo pero como necesito que no tenga en cuenta los espacios uso el contenido pero remplazo los espacios por nada y asi los elimino. Fue lo que se me ocurrio.
-            num_caracteres = len(contenido.replace(" ", "")).replace("\n" , "")
+            num_caracteres = len(contenido.replace(" ", "").replace("\n" , ""))
 
             print(f"El archivo contiene: \n {num_palabras} palabras. \n {num_caracterestotal} caracteres totales (incluyendo los espacios). \n {num_caracteres} caracteres (sin espacios). \n")
 
     except FileNotFoundError:
         print("No se encontro el archivo.")
 
-    except Exception:
-        print("Ocurrió un error.")
+    except Exception as a:
+        print(f"Ocurrió un error. {a}")
 
 
 

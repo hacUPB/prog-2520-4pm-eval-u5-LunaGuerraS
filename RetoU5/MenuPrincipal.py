@@ -37,8 +37,8 @@ def menu ():
 
                         case 2:
                             print()
-                            reemplazar()
-             
+                            2
+                            
                         case 3:
                             print()
                             Histograma()
