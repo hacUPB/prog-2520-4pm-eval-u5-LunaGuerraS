@@ -72,10 +72,11 @@ def estadistica():
 
 #Ahora se hacen todos los analisis.
             numero_datos = len(datos_columna)
-            promedio = sum(datos_columna)/ numero_datos
+            promedio = sum(datos_columna) / numero_datos
             minimo = min(datos_columna)
             maximo = max(datos_columna)
 
+            total = 0
     #Se hace el bucle para sacar la desviación.
             for i in range(len(datos_columna)):
                 total += (i-promedio)**2
@@ -93,7 +94,7 @@ def estadistica():
                 mediana = (datos_ordenados[medio - 1] + datos_ordenados[medio]) / 2
 
 
-            print(f"El analisis de la comumna {columna} es:")
+            print(f"El analisis de la comumna {columna + 1} es:")
             print(f"Numero de datos: {numero_datos} \n Promedio: {promedio} \n Mediana: {mediana} \n Desviación estandar: {resultado} \n Minimo: {minimo} \n Maximo: {maximo}")
 
 
@@ -101,8 +102,8 @@ def estadistica():
         print("No se encontro el archivo.")
     except ValueError:
         print("Por favor, ingrese un número de columna válido.")
-    except Exception:
-        print("Ocurrió un error")
+    except Exception as E:
+        print(f"Ocurrió un error de tipo {E}")
 
 
 

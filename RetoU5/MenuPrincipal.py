@@ -37,7 +37,7 @@ def menu ():
 
                         case 2:
                             print()
-                            2
+                            reemplazar()
                             
                         case 3:
                             print()
