@@ -42,4 +42,5 @@ Se uso con bastante frecuencia el `try-except` para asegurar que el codigo sigui
 
 ### Link del video.
 Video donde se muestra el funcionamiento completo del código.
+https://youtu.be/PL2H3pqt69c?si=pt-0p6GXZKwKBAAA
 
